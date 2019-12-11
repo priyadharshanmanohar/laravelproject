@@ -21,3 +21,8 @@ Route::get('/display', 'ImportController@display');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('ajax',function() {
+    return view('message');
+ });
+ Route::post('/getmsg','AjaxController@index');

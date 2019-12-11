@@ -12,8 +12,7 @@ class ImportController extends Controller
         $validatedData = $request->validate([
             'csv_file' => 'required|file'
         ]);
-           
-        
+      
         $path = $request->file('csv_file')->getRealPath();
         $csv_data = array_map('str_getcsv', file($path));
         $product = new Product;
@@ -32,7 +31,8 @@ class ImportController extends Controller
         }
         $ctr++;
         }
-        return view('welcome2',['message'=>'Uploaded Succesfully']);
+        return redirect()->back()->with('message', 'Uploaded!!!');
+        //return view('welcome2',['message'=>'Uploaded Succesfully']);
    
         
         
