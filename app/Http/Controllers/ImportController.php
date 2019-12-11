@@ -42,6 +42,6 @@ public function display()
     
 
     $product_values = Product::all();
-    return view('child',['users'=>$product_values]);
+    return view('display',['users'=>$product_values]);
 }
 }
